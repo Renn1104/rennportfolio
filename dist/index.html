@@ -1,28 +1,50 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <div class ="container mx-auto bg-yellow-500">
-    <h2 class="text-3xl text-sky-500">
-      Selamat Datang di Renn Portfolio">
-    </h2>
-    <h3 class="text-7-1">
-      Rendy Nayogi Pramudya
-    </h3>
-    <h1 class="background-color: to-blue-800 text-5x1">
-        Information System
-    </h1>
-    <h1 class="text-8x1">
-        Information System
-    </h1>
-  </div>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rendy Nayogi | Frontend Developer</title>
 
-</body>
+    <!-- Tailwind Output -->
+    <link rel="stylesheet" href="./dist/assets/css/style.css" />
+  </head>
+
+  <body class="bg-primary text-white transition-colors duration-300">
+    <!-- ================= NAVBAR ================= -->
+    <!-- src/layouts/navbar.html -->
+    <header id="navbar"></header>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <!-- src/sections/hero.html -->
+      <section id="home"></section>
+
+      <!-- ================= ABOUT ================= -->
+      <!-- src/sections/about.html -->
+      <section id="about"></section>
+
+      <!-- ================= EDUCATION ================= -->
+      <!-- src/sections/education.html -->
+      <section id="education"></section>
+
+      <!-- ================= SKILLS ================= -->
+      <!-- src/sections/skills.html -->
+      <section id="skills"></section>
+
+      <!-- ================= PROJECTS ================= -->
+      <!-- src/sections/projects.html -->
+      <section id="projects"></section>
+
+      <!-- ================= CERTIFICATES ================= -->
+      <!-- src/sections/certificates.html -->
+      <section id="certificates"></section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- src/layouts/footer.html -->
+    <footer id="footer"></footer>
+
+    <!-- Main JS -->
+    <script src="./dist/assets/js/main.js"></script>
+  </body>
 </html>
