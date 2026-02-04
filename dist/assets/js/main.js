@@ -1,20 +1,33 @@
-import "./theme.js";
-function loadComponent(id, file) {
-  fetch(file)
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById(id).innerHTML = data;
-    });
+// helper untuk load file HTML ke element
+async function loadHTML(selector, file) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(`Failed to load ${file}`);
+    el.innerHTML = await res.text();
+  } catch (err) {
+    console.error(err);
+  }
+}
+async function loadComponent(id, file) {
+  const res = await fetch(file)
+  const html = await res.text()
+  document.getElementById(id).innerHTML = html
 }
 
-// Load Layouts
-loadComponent("navbar", "./src/layouts/navbar.html");
-loadComponent("footer", "./src/layouts/footer.html");
+loadComponent("navbar", "./src/components/navbar.html")
+loadComponent("hero", "./src/components/hero.html")
 
-// Load Sections
-loadComponent("home", "./src/sections/hero.html");
-loadComponent("about", "./src/sections/about.html");
-loadComponent("education", "./src/sections/education.html");
-loadComponent("skills", "./src/sections/skills.html");
-loadComponent("projects", "./src/sections/projects.html");
-loadComponent("certificates", "./src/sections/certificates.html");
+// LOAD LAYOUT
+loadHTML("#navbar", "./src/layouts/navbar.html");
+loadHTML("#footer", "./src/layouts/footer.html");
+
+// LOAD SECTIONS
+loadHTML("#hero", "./src/sections/hero.html");
+loadHTML("#about", "./src/sections/about.html");
+loadHTML("#education", "./src/sections/education.html");
+loadHTML("#skills", "./src/sections/skills.html");
+loadHTML("#projects", "./src/sections/projects.html");
+loadHTML("#certificates", "./src/sections/certificates.html");
