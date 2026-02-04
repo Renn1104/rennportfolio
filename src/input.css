@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@layer components {
+  .nav-link {
+    @apply relative text-white transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-2 h-[2px] w-0 bg-[#E9F4A3] transition-all duration-300;
+  }
+
+  .nav-link:hover {
+    color: #E9F4A3;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #E9F4A3;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+}

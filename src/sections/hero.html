@@ -1,55 +1,172 @@
-<section
-  id="hero"
-  class="min-h-screen scroll-mt-24 flex items-center bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950"
->
+<section id="hero" class="relative min-h-screen overflow-hidden">
+  <!-- BACKGROUND COVER -->
   <div
-    class="max-w-7xl mx-auto px-6 pt-32 pb-20 grid gap-12 md:grid-cols-2 items-center"
+    class="absolute inset-0 bg-cover bg-center -z-40"
+    style="background-image: url('./src/assets/images/hero/bckg.png');"
+  ></div>
+
+  <!-- GRADIENT OVERLAY -->
+  <div
+    class="absolute inset-0 -z-10 opacity-75"
+    style="
+      background: linear-gradient(
+        180deg,
+        rgba(11,16,35,0.95) 0%,
+        rgba(25,37,69,0.9) 25%,
+        rgba(28,127,221,0.75) 75%,
+        rgba(15,183,212,0.8) 100%
+      );
+    "
+  ></div>
+
+  <!-- PNG OVERLAY (texture halus atau pattern) -->
+  <div
+    class="absolute inset-0 -z-20 bg-cover bg-no-repeat opacity-50"
+    style="background-image: url('./src/assets/images/hero/overlay.png');"
+  ></div>
+
+  <!-- CONTENT WRAPPER -->
+  <div
+    class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen
+           grid grid-cols-1 lg:grid-cols-3 items-center text-white
+           animate-fade-up"
   >
-    <!-- LEFT CONTENT -->
-    <div class="space-y-6">
-      <span
-        class="inline-block px-4 py-1 text-sm rounded-full bg-pink-500/10 text-pink-400"
+    <!-- LEFT TEXT -->
+    <div
+      class="flex flex-col justify-center font-[Lora] italic space-y-6 text-left"
+    >
+      <div class="w-14 h-[2px] bg-white animate-fade-in"></div>
+      <h2 class="text-2xl tracking-wide uppercase animate-fade-in delay-100">
+        Hi, There!
+      </h2>
+      <h1
+        class="text-5xl xl:text-6xl leading-tight font-semibold animate-fade-in delay-200"
       >
-        Frontend Web Developer
-      </span>
-
-      <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
-        Hi, I’m <br />
-        <span class="text-pink-500">Renn</span>
+        I’m <span class="text-[#E9F4A3]">Rendy Nayogi</span><br />
+        Pramudya
       </h1>
-
-      <p class="text-gray-400 max-w-xl">
-        Information Systems student with a strong interest in Frontend Web
-        Development and UI/UX Design. I enjoy building clean, responsive, and
-        user-friendly interfaces.
+      <p
+        class="text-xl not-italic font-[Poppins] animate-fade-in delay-300"
+      >
+        Information Systems Student
       </p>
+    </div>
 
-      <div class="flex gap-4">
-        <a
-          href="#projects"
-          class="px-6 py-3 rounded-lg bg-pink-500 text-black font-medium hover:bg-pink-400 transition"
-        >
-          View Projects
-        </a>
+    <!-- SPACER -->
+    <div class="hidden lg:block"></div>
 
+    <!-- RIGHT TEXT -->
+    <div
+      class="flex flex-col justify-center font-[Poppins] space-y-6 text-right"
+    >
+      <p
+        class="text-[#E9F4A3] text-base font-medium animate-fade-in delay-200"
+      >
+        Enthusiast On
+      </p>
+      <h3
+        class="text-2xl leading-relaxed font-semibold animate-fade-in delay-300"
+      >
+        Based in Indonesian<br />
+        I’m Front-End Web Developer<br />
+        and UI/UX Designer
+      </h3>
+      <p
+        class="text-white/70 leading-relaxed animate-fade-in delay-400"
+      >
+        Passionate about futuristic<br />
+        web interfaces & experiences
+      </p>
+      <div class="flex justify-end">
         <a
-          href="#about"
-          class="px-6 py-3 rounded-lg border border-white/20 hover:border-white/40 transition"
+          href="#"
+          class="mt-2 inline-block bg-[#E9F4A3] text-black font-semibold px-8 py-3 rounded-full hover:scale-105 transition"
         >
-          About Me
+          Download CV
         </a>
       </div>
     </div>
+  </div>
 
-    <!-- RIGHT IMAGE -->
-    <div class="relative flex justify-center">
-      <div class="absolute -inset-4 bg-pink-500/20 blur-3xl rounded-full"></div>
+  <!-- CENTER IMAGE -->
+  <div
+    class="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center items-end animate-fade-up"
+  >
+    <div class="relative flex justify-center items-end transition-transform duration-500 ease-in-out">
+      <div class="relative z-10">
+        <img
+          src="./src/assets/images/hero/hero_renn.png"
+          alt="Rendy Nayogi"
+          class="w-[640px] xl:w-[575px] 2xl:w-[560px]
+                 drop-shadow-[0_0_70px_rgba(233,244,163,0.45)]
+                 relative z-10 transition-all duration-700 ease-in-out
+                 hover:scale-[1.03] hover:drop-shadow-[0_0_100px_rgba(255,255,255,0.9)]"
+        />
+      </div>
 
-      <img
-        src="./src/assets/images/hero/hero.png"
-        alt="Renn Profile"
-        class="relative w-64 md:w-80 rounded-2xl object-cover"
-      />
+      <!-- GLOW EFFECT -->
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[160px]
+               bg-[#E9F4A3]/25 blur-[120px] rounded-full z-0
+               animate-glow-pulse transition-all duration-700 ease-in-out
+               hover:bg-white/40 hover:blur-[130px]"
+      ></div>
     </div>
   </div>
+
+  <!-- LET’S INNOVATE BUTTON -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-fade-in delay-500">
+    <div
+      class="px-12 py-3 rounded-full border border-[#E9F4A3]/60 text-[#E9F4A3]
+             font-[Poppins] tracking-wide hover:bg-[#E9F4A3] hover:text-black
+             transition cursor-pointer backdrop-blur-sm"
+    >
+      LET’S INNOVATE!
+    </div>
+  </div>
+
+  <!-- ANIMATIONS -->
+  <style>
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes glow-pulse {
+      0% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+    }
+    .animate-fade-up {
+      animation: fade-up 1s ease-out both;
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out both;
+    }
+    .animate-glow-pulse {
+      animation: glow-pulse 4s ease-in-out infinite;
+    }
+  </style>
 </section>
