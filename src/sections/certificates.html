@@ -1,98 +1,381 @@
-<section class="py-24 text-center">
-  <h2 class="text-3xl font-bold">Certificates</h2>
-</section>
-
+<!-- ================= CERTIFICATES ================= -->
 <section
   id="certificates"
-  class="scroll-mt-24 py-24 bg-zinc-950"
+  class="scroll-mt-24 py-24 relative overflow-hidden"
+  style="
+    background: linear-gradient(180deg, #192545 10%, #1c7fdd 75%, #0fb7d4 100%);
+  "
 >
-  <div class="max-w-7xl mx-auto px-6">
+  <!-- Glow Background -->
+  <div class="absolute inset-0 opacity-20 blur-3xl pointer-events-none">
+    <div
+      class="absolute top-10 left-10 w-72 h-72 bg-[#E9F4A3] rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-10 right-10 w-72 h-72 bg-cyan-400 rounded-full"
+    ></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
     <!-- HEADER -->
-    <div class="mb-16 max-w-2xl">
+    <div class="mb-16 max-w-2xl" data-aos="fade-up">
       <span
-        class="inline-block px-4 py-1 text-sm rounded-full bg-pink-500/10 text-pink-400"
+        class="inline-block px-4 py-1 text-sm rounded-full bg-[#E9F4A3]/10 text-[#E9F4A3] font-[Lora]"
       >
         Certificates
       </span>
 
-      <h2 class="mt-4 text-3xl md:text-4xl font-bold">
-        Achievements & <span class="text-pink-500">Certificates</span>
+      <h2 class="mt-4 text-4xl md:text-5xl font-[Lora] italic text-[#E9F4A3]">
+        Achievements & <span class="not-italic text-white">Certificates</span>
       </h2>
 
-      <p class="mt-4 text-gray-400">
-        Certificates and achievements that support my skills and learning
+      <div class="w-40 h-[3px] bg-white/80 mt-4"></div>
+
+      <p class="mt-6 text-gray-200 text-lg font-[Poppins]">
+        Recognitions and achievements that showcase my continuous learning
         journey.
       </p>
     </div>
 
     <!-- CERTIFICATE GRID -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- CERTIFICATE CARD -->
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- CARD 1 -->
       <div
-        class="rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-pink-500/40 transition"
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-600 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
       >
         <img
           src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
           alt="Certificate 1"
-          class="w-full h-48 object-cover"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
-        <div class="p-5 space-y-2">
-          <h3 class="font-semibold">
-            Frontend Web Development
-          </h3>
-          <p class="text-sm text-gray-400">
-            Issued by Dicoding
-          </p>
-          <span class="text-xs text-gray-500">
-            2024
-          </span>
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">Frontend Web Development</h3>
+          <p class="text-sm text-white/70">Issued by Dicoding</p>
+          <span class="text-xs text-white/50">2024</span>
+        </div>
+
+        <!-- Hover overlay -->
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
         </div>
       </div>
 
+      <!-- CARD 2 -->
       <div
-        class="rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-pink-500/40 transition"
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="100"
       >
         <img
           src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
           alt="Certificate 2"
-          class="w-full h-48 object-cover"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
-        <div class="p-5 space-y-2">
-          <h3 class="font-semibold">
-            UI/UX Design Fundamentals
-          </h3>
-          <p class="text-sm text-gray-400">
-            Issued by Coursera
-          </p>
-          <span class="text-xs text-gray-500">
-            2023
-          </span>
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">UI/UX Design Fundamentals</h3>
+          <p class="text-sm text-white/70">Issued by Coursera</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
         </div>
       </div>
 
+      <!-- CARD 3 -->
       <div
-        class="rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-pink-500/40 transition"
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
       >
         <img
           src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
           alt="Certificate 3"
-          class="w-full h-48 object-cover"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
-        <div class="p-5 space-y-2">
-          <h3 class="font-semibold">
-            JavaScript Basics
-          </h3>
-          <p class="text-sm text-gray-400">
-            Issued by Progate
-          </p>
-          <span class="text-xs text-gray-500">
-            2023
-          </span>
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 4 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 5 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 6 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 7 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 8 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <!-- CARD 9 -->
+      <div
+        class="group relative rounded-2xl border border-white/20 bg-white/10 backdrop-blur overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(233,244,163,0.35)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./src/assets/images/certificates/Sertifikat RevoU.jpg"
+          alt="Certificate 3"
+          class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        <div class="p-6 space-y-2 text-white font-[Poppins]">
+          <h3 class="font-semibold text-lg">JavaScript Basics</h3>
+          <p class="text-sm text-white/70">Issued by Progate</p>
+          <span class="text-xs text-white/50">2023</span>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+        >
+          <button
+            onclick="
+              openCertificateModal(
+                './src/assets/images/certificates/Sertifikat RevoU.jpg',
+              )
+            "
+            class="px-5 py-2 bg-[#E9F4A3] text-black rounded-full font-semibold font-[Poppins] hover:scale-105 transition"
+          >
+            View
+          </button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- MODAL VIEWER -->
+  <div
+    id="certificateModal"
+    class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[999]"
+  >
+    <div class="relative max-w-4xl w-full px-6">
+      <img
+        id="certificateImage"
+        src=""
+        alt="Certificate Full View"
+        class="rounded-xl shadow-2xl border border-white/20 max-h-[80vh] mx-auto"
+      />
+      <button
+        onclick="closeCertificateModal()"
+        class="absolute top-4 right-6 text-white text-3xl hover:text-[#E9F4A3] transition"
+      >
+        &times;
+      </button>
+    </div>
+  </div>
 </section>
+
+<!-- SCRIPT MODAL -->
+<script>
+  function openCertificateModal(imgSrc) {
+    const modal = document.getElementById("certificateModal");
+    const image = document.getElementById("certificateImage");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    image.src = imgSrc;
+  }
+
+  function closeCertificateModal() {
+    const modal = document.getElementById("certificateModal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+</script>
