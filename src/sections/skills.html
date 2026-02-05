@@ -30,18 +30,29 @@
 
     <!-- TOGGLE -->
     <div class="mt-10 flex justify-center">
-      <div class="skill-toggle" id="skillToggle">
-        <div class="skill-toggle-slider" id="skillSlider"></div>
+      <div
+        class="relative flex bg-[#1E2337] border-2 border-[#737070] rounded-full p-1 w-[340px] font-[Lora]"
+      >
+        <!-- SLIDER -->
+        <div
+          id="skillSlider"
+          class="absolute top-1 left-1 w-1/2 h-[calc(100%-8px)] bg-[#E9F4A3] rounded-full transition-all duration-300"
+        ></div>
 
+        <!-- BUTTON -->
         <button
           id="btnTech"
-          class="skill-toggle-btn active"
           onclick="showTech()"
+          class="relative z-10 w-1/2 py-2 text-black font-semibold"
         >
           Technologies
         </button>
 
-        <button id="btnTools" class="skill-toggle-btn" onclick="showTools()">
+        <button
+          id="btnTools"
+          onclick="showTools()"
+          class="relative z-10 w-1/2 py-2 text-white"
+        >
           Tools
         </button>
       </div>

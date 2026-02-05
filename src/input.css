@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @layer components {
-
-  /* ================= NAVBAR ================= */
+  /* =====================================================
+     NAVBAR
+  ====================================================== */
   .nav-link {
     @apply relative text-white transition-colors duration-300;
   }
 
   .nav-link::after {
     content: "";
-    @apply absolute left-0 -bottom-2 h-[2px] w-0 bg-[#E9F4A3] transition-all duration-300;
+    @apply absolute left-0 -bottom-2 h-[2px] w-0
+           bg-[#E9F4A3]
+           transition-all duration-300;
   }
 
   .nav-link:hover {
-    color: #E9F4A3;
+    color: #e9f4a3;
   }
 
   .nav-link:hover::after {
@@ -21,16 +24,16 @@
   }
 
   .nav-link.active {
-    color: #E9F4A3;
+    color: #e9f4a3;
   }
 
   .nav-link.active::after {
     width: 100%;
   }
 
-
-  /* ================= EDUCATION CARD ================= */
-
+  /* =====================================================
+     EDUCATION CARD
+  ====================================================== */
   .edu-card {
     @apply flex items-center gap-5
            bg-[#2B2B2B]/75
@@ -38,8 +41,7 @@
            p-6
            text-white
            backdrop-blur
-           transition
-           duration-300
+           transition duration-300
            hover:-translate-y-2
            hover:shadow-[0_0_30px_rgba(255,255,255,0.25)];
   }
@@ -56,31 +58,122 @@
     @apply text-white/70;
   }
 
-  /* ===== SKILL TOGGLE ===== */
+  /* =====================================================
+     SKILL TOGGLE
+  ====================================================== */
   .skill-toggle {
-    @apply relative inline-flex items-center bg-[#1E2337] border-2 border-[#737070] rounded-full p-1 font-[Lora] text-white;
+    @apply relative inline-flex items-center
+           bg-[#1E2337]
+           border-2 border-[#737070]
+           rounded-full
+           p-1
+           font-[Lora]
+           text-white;
   }
 
   .skill-toggle-btn {
-    @apply relative z-10 px-6 py-2 rounded-full transition duration-300 cursor-pointer;
+    @apply relative z-10
+           px-6 py-2
+           rounded-full
+           cursor-pointer
+           transition duration-300;
   }
 
   .skill-toggle-slider {
-    @apply absolute top-1 left-1 h-[calc(100%-8px)] w-1/2 rounded-full bg-[#E9F4A3] transition-all duration-300;
+    @apply absolute top-1 left-1
+           h-[calc(100%-8px)]
+           w-1/2
+           rounded-full
+           bg-[#E9F4A3]
+           transition-all duration-300;
   }
 
-  /* ===== SKILL CARD ===== */
+  /* =====================================================
+     SKILL CARD
+  ====================================================== */
   .skill-card {
-    @apply rounded-2xl p-6 text-center text-white
+    @apply rounded-2xl
+           p-6
+           text-center
+           text-white
            border border-[#737070]
            transition duration-300
            hover:-translate-y-2
            hover:shadow-[0_0_30px_rgba(255,255,255,0.35)];
-    background: linear-gradient(180deg,#e2e9b1 0%,#888E5F 100%);
+    background: linear-gradient(180deg, #e2e9b1 0%, #888e5f 100%);
   }
 
   .skill-icon-wrap {
-    @apply w-16 h-16 mx-auto mb-4 rounded-xl
-           bg-[#2B2B2B]/70 flex items-center justify-center;
+    @apply w-16 h-16
+           mx-auto mb-4
+           rounded-xl
+           bg-[#2B2B2B]/70
+           flex items-center justify-center;
+  }
+
+  /* =====================================================
+     PROJECT CARD
+  ====================================================== */
+  .project-card {
+    @apply rounded-3xl
+           border border-white/20
+           bg-white/10
+           backdrop-blur
+           overflow-hidden
+           transition duration-300
+           hover:-translate-y-2
+           hover:shadow-[0_0_40px_rgba(233,244,163,0.35)];
+  }
+
+  .badge {
+    @apply inline-block
+           px-4 py-1
+           rounded-full
+           bg-[#E9F4A3]
+           text-black
+           text-sm
+           font-semibold;
+  }
+
+  .tag {
+    @apply px-3 py-1
+           rounded-full
+           bg-white/15
+           border border-white/20
+           text-sm
+           text-white;
+  }
+
+  .project-btn {
+    @apply w-full
+           mt-4
+           py-3
+           rounded-xl
+           bg-[#E9F4A3]
+           text-black
+           font-semibold
+           transition
+           hover:scale-105;
+  }
+
+  .nav-btn {
+    @apply px-8 py-3
+           rounded-xl
+           border border-[#E9F4A3]
+           text-[#E9F4A3]
+           transition
+           hover:bg-[#E9F4A3]
+           hover:text-black;
+  }
+
+  #backBtn:not(:disabled),
+  #nextBtn:not(:disabled) {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+  }
+
+  #backBtn:hover:not(:disabled),
+  #nextBtn:hover:not(:disabled) {
+    transform: scale(1.08);
   }
 }

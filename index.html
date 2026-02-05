@@ -35,59 +35,138 @@
     </main>
     <footer id="footer"></footer>
 
-    <script src="./dist/assets/js/main.js"></script>
-    <script src="./dist/assets/js/theme.js"></script>
-    <script src="./dist/assets/js/projects.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 900,
-        once: true,
-        easing: "ease-out-cubic",
+  <script src="./dist/assets/js/main.js"></script>
+<script src="./dist/assets/js/theme.js"></script>
+<script src="./dist/assets/js/projects.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 900,
+  once: true,
+  easing: "ease-out-cubic",
+});
+</script>
+
+<!-- REVEAL OBSERVER -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
       });
-    </script>
-    <script>
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        { threshold: 0.15 },
-      );
+    },
+    { threshold: 0.15 }
+  );
 
-      reveals.forEach((el) => observer.observe(el));
-    </script>
-    <script>
-      function showTech() {
-        techGrid.classList.remove("hidden");
-        toolsGrid.classList.add("hidden");
-        skillSlider.style.transform = "translateX(0)";
-      }
+  reveals.forEach((el) => observer.observe(el));
+});
+</script>
 
-      function showTools() {
-        techGrid.classList.add("hidden");
-        toolsGrid.classList.remove("hidden");
-        skillSlider.style.transform = "translateX(100%)";
-      }
-    </script>
-    <script>
-      const slider = document.getElementById("projectSlider");
-      let index = 0;
-      const cardWidth = 420; // sesuaikan min-width + gap
+<!-- SKILLS TOGGLE FIX -->
+<script>
+function initSkillToggle() {
+  const techGrid = document.getElementById("techGrid");
+  const toolsGrid = document.getElementById("toolsGrid");
+  const slider = document.getElementById("skillSlider");
+  const btnTech = document.getElementById("btnTech");
+  const btnTools = document.getElementById("btnTools");
 
-      function slideNext() {
-        index++;
-        slider.style.transform = `translateX(-${index * cardWidth}px)`;
-      }
+  if (!techGrid || !toolsGrid || !slider || !btnTech || !btnTools) return false;
 
-      function slidePrev() {
-        index = Math.max(index - 1, 0);
-        slider.style.transform = `translateX(-${index * cardWidth}px)`;
-      }
-    </script>
-  </body>
-</html>
+  window.showTech = function () {
+    techGrid.classList.remove("hidden");
+    toolsGrid.classList.add("hidden");
+    slider.style.transform = "translateX(0%)";
+
+    btnTech.classList.remove("text-white");
+    btnTech.classList.add("text-black", "font-semibold");
+
+    btnTools.classList.remove("text-black", "font-semibold");
+    btnTools.classList.add("text-white");
+  };
+
+  window.showTools = function () {
+    techGrid.classList.add("hidden");
+    toolsGrid.classList.remove("hidden");
+    slider.style.transform = "translateX(100%)";
+
+    btnTools.classList.remove("text-white");
+    btnTools.classList.add("text-black", "font-semibold");
+
+    btnTech.classList.remove("text-black", "font-semibold");
+    btnTech.classList.add("text-white");
+  };
+
+  return true;
+}
+
+/* Jalankan terus sampai section skills benar-benar sudah dimuat */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkInterval = setInterval(() => {
+    const success = initSkillToggle();
+    if (success) clearInterval(checkInterval);
+  }, 200);
+});
+</script>
+
+<!-- PROJECT CAROUSEL -->
+<script>
+function initProjectCarousel() {
+  const carousel = document.getElementById("projectCarousel");
+  const backBtn = document.getElementById("backBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (!carousel || !backBtn || !nextBtn) return false;
+
+  let index = 0;
+  const total = carousel.children.length;
+
+  // Tambahkan smooth easing
+  carousel.style.transition = "transform 0.6s cubic-bezier(0.45, 0, 0.55, 1)";
+
+  function update() {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+
+    // efek disable tombol (optional)
+    backBtn.disabled = index === 0;
+    nextBtn.disabled = index === total - 1;
+
+    // ubah opacity saat disable
+    backBtn.style.opacity = backBtn.disabled ? "0.4" : "1";
+    nextBtn.style.opacity = nextBtn.disabled ? "0.4" : "1";
+  }
+
+  nextBtn.onclick = () => {
+    if (index < total - 1) {
+      index++;
+      update();
+    }
+  };
+
+  backBtn.onclick = () => {
+    if (index > 0) {
+      index--;
+      update();
+    }
+  };
+
+  update();
+  return true;
+}
+
+/* Cek terus sampai section project sudah dimuat */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkInterval = setInterval(() => {
+    const success = initProjectCarousel();
+    if (success) clearInterval(checkInterval);
+  }, 200);
+});
+</script>
+
