@@ -1,37 +1,32 @@
 <section id="hero" class="relative min-h-screen overflow-hidden">
-  <!-- BACKGROUND COVER -->
   <div
     class="absolute inset-0 bg-cover bg-center -z-40"
-    style="background-image: url('./src/assets/images/hero/bckg.png');"
+    style="background-image: url(&quot;./src/assets/images/hero/bckg.png&quot;)"
   ></div>
 
-  <!-- GRADIENT OVERLAY -->
   <div
     class="absolute inset-0 -z-10 opacity-75"
     style="
       background: linear-gradient(
         180deg,
-        rgba(11,16,35,0.95) 0%,
-        rgba(25,37,69,0.9) 25%,
-        rgba(28,127,221,0.75) 75%,
-        rgba(15,183,212,0.8) 100%
+        rgba(11, 16, 35, 0.95) 0%,
+        rgba(25, 37, 69, 0.9) 25%,
+        rgba(28, 127, 221, 0.75) 75%,
+        rgba(15, 183, 212, 0.8) 100%
       );
     "
   ></div>
 
-  <!-- PNG OVERLAY (texture halus atau pattern) -->
   <div
     class="absolute inset-0 -z-20 bg-cover bg-no-repeat opacity-50"
-    style="background-image: url('./src/assets/images/hero/overlay.png');"
+    style="
+      background-image: url(&quot;./src/assets/images/hero/overlay.png&quot;);
+    "
   ></div>
 
-  <!-- CONTENT WRAPPER -->
   <div
-    class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen
-           grid grid-cols-1 lg:grid-cols-3 items-center text-white
-           animate-fade-up"
+    class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen grid grid-cols-1 lg:grid-cols-3 items-center text-white animate-fade-up"
   >
-    <!-- LEFT TEXT -->
     <div
       class="flex flex-col justify-center font-[Lora] italic space-y-6 text-left"
     >
@@ -45,23 +40,17 @@
         I’m <span class="text-[#E9F4A3]">Rendy Nayogi</span><br />
         Pramudya
       </h1>
-      <p
-        class="text-xl not-italic font-[Poppins] animate-fade-in delay-300"
-      >
+      <p class="text-xl not-italic font-[Poppins] animate-fade-in delay-300">
         Information Systems Student
       </p>
     </div>
 
-    <!-- SPACER -->
     <div class="hidden lg:block"></div>
 
-    <!-- RIGHT TEXT -->
     <div
       class="flex flex-col justify-center font-[Poppins] space-y-6 text-right"
     >
-      <p
-        class="text-[#E9F4A3] text-base font-medium animate-fade-in delay-200"
-      >
+      <p class="text-[#E9F4A3] text-base font-medium animate-fade-in delay-200">
         Enthusiast On
       </p>
       <h3
@@ -71,9 +60,7 @@
         I’m Front-End Web Developer<br />
         and UI/UX Designer
       </h3>
-      <p
-        class="text-white/70 leading-relaxed animate-fade-in delay-400"
-      >
+      <p class="text-white/70 leading-relaxed animate-fade-in delay-400">
         Passionate about futuristic<br />
         web interfaces & experiences
       </p>
@@ -88,44 +75,40 @@
     </div>
   </div>
 
-  <!-- CENTER IMAGE -->
   <div
     class="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center items-end animate-fade-up"
   >
-    <div class="relative flex justify-center items-end transition-transform duration-500 ease-in-out">
+    <div
+      class="relative flex justify-center items-end transition-transform duration-500 ease-in-out"
+    >
       <div class="relative z-10">
         <img
           src="./src/assets/images/hero/hero_renn.png"
           alt="Rendy Nayogi"
-          class="w-[640px] xl:w-[575px] 2xl:w-[560px]
-                 drop-shadow-[0_0_70px_rgba(233,244,163,0.45)]
-                 relative z-10 transition-all duration-700 ease-in-out
-                 hover:scale-[1.03] hover:drop-shadow-[0_0_100px_rgba(255,255,255,0.9)]"
+          class="w-[640px] xl:w-[575px] 2xl:w-[560px] drop-shadow-[0_0_70px_rgba(233,244,163,0.45)] relative z-10 transition-all duration-700 ease-in-out hover:scale-[1.03] hover:drop-shadow-[0_0_100px_rgba(255,255,255,0.9)]"
         />
       </div>
-
-      <!-- GLOW EFFECT -->
       <div
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[160px]
-               bg-[#E9F4A3]/25 blur-[120px] rounded-full z-0
-               animate-glow-pulse transition-all duration-700 ease-in-out
-               hover:bg-white/40 hover:blur-[130px]"
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[160px] bg-[#E9F4A3]/25 blur-[120px] rounded-full z-0 animate-glow-pulse transition-all duration-700 ease-in-out hover:bg-white/40 hover:blur-[130px]"
       ></div>
     </div>
   </div>
 
-  <!-- LET’S INNOVATE BUTTON -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-fade-in delay-500">
+  <img
+    src="./src/assets/icons/Group.svg"
+    class="absolute left-0 top-0 opacity-100 w-[420px] pointer-events-none"
+  />
+
+  <div
+    class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-fade-in delay-500"
+  >
     <div
-      class="px-12 py-3 rounded-full border border-[#E9F4A3]/60 text-[#E9F4A3]
-             font-[Poppins] tracking-wide hover:bg-[#E9F4A3] hover:text-black
-             transition cursor-pointer backdrop-blur-sm"
+      class="px-12 py-3 rounded-full border border-[#E9F4A3]/60 text-[#E9F4A3] font-[Poppins] tracking-wide hover:bg-[#E9F4A3] hover:text-black transition cursor-pointer backdrop-blur-sm"
     >
       LET’S INNOVATE!
     </div>
   </div>
 
-  <!-- ANIMATIONS -->
   <style>
     @keyframes fade-up {
       0% {

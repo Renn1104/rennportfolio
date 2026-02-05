@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Renn Portfolio</title>
-
-    <!-- Tailwind Output CSS -->
     <link rel="stylesheet" href="./dist/assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Lora -->
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <!-- Poppins -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -23,10 +19,7 @@
   </head>
 
   <body class="bg-zinc-950 text-white transition-colors duration-300">
-    <!-- Navbar -->
     <header id="navbar"></header>
-
-    <!-- Main Content -->
     <main>
       <section id="hero"></section>
 
@@ -40,11 +33,8 @@
 
       <section id="certificates"></section>
     </main>
-
-    <!-- Footer -->
     <footer id="footer"></footer>
 
-    <!-- JS -->
     <script src="./dist/assets/js/main.js"></script>
     <script src="./dist/assets/js/theme.js"></script>
     <script src="./dist/assets/js/projects.js"></script>
@@ -55,6 +45,49 @@
         once: true,
         easing: "ease-out-cubic",
       });
+    </script>
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      function showTech() {
+        techGrid.classList.remove("hidden");
+        toolsGrid.classList.add("hidden");
+        skillSlider.style.transform = "translateX(0)";
+      }
+
+      function showTools() {
+        techGrid.classList.add("hidden");
+        toolsGrid.classList.remove("hidden");
+        skillSlider.style.transform = "translateX(100%)";
+      }
+    </script>
+    <script>
+      const slider = document.getElementById("projectSlider");
+      let index = 0;
+      const cardWidth = 420; // sesuaikan min-width + gap
+
+      function slideNext() {
+        index++;
+        slider.style.transform = `translateX(-${index * cardWidth}px)`;
+      }
+
+      function slidePrev() {
+        index = Math.max(index - 1, 0);
+        slider.style.transform = `translateX(-${index * cardWidth}px)`;
+      }
     </script>
   </body>
 </html>

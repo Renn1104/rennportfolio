@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @layer components {
+
+  /* ================= NAVBAR ================= */
   .nav-link {
     @apply relative text-white transition-colors duration-300;
   }
@@ -24,5 +26,61 @@
 
   .nav-link.active::after {
     width: 100%;
+  }
+
+
+  /* ================= EDUCATION CARD ================= */
+
+  .edu-card {
+    @apply flex items-center gap-5
+           bg-[#2B2B2B]/75
+           rounded-2xl
+           p-6
+           text-white
+           backdrop-blur
+           transition
+           duration-300
+           hover:-translate-y-2
+           hover:shadow-[0_0_30px_rgba(255,255,255,0.25)];
+  }
+
+  .edu-year {
+    @apply text-[#E9F4A3] text-sm;
+  }
+
+  .edu-title {
+    @apply font-semibold text-lg;
+  }
+
+  .edu-sub {
+    @apply text-white/70;
+  }
+
+  /* ===== SKILL TOGGLE ===== */
+  .skill-toggle {
+    @apply relative inline-flex items-center bg-[#1E2337] border-2 border-[#737070] rounded-full p-1 font-[Lora] text-white;
+  }
+
+  .skill-toggle-btn {
+    @apply relative z-10 px-6 py-2 rounded-full transition duration-300 cursor-pointer;
+  }
+
+  .skill-toggle-slider {
+    @apply absolute top-1 left-1 h-[calc(100%-8px)] w-1/2 rounded-full bg-[#E9F4A3] transition-all duration-300;
+  }
+
+  /* ===== SKILL CARD ===== */
+  .skill-card {
+    @apply rounded-2xl p-6 text-center text-white
+           border border-[#737070]
+           transition duration-300
+           hover:-translate-y-2
+           hover:shadow-[0_0_30px_rgba(255,255,255,0.35)];
+    background: linear-gradient(180deg,#e2e9b1 0%,#888E5F 100%);
+  }
+
+  .skill-icon-wrap {
+    @apply w-16 h-16 mx-auto mb-4 rounded-xl
+           bg-[#2B2B2B]/70 flex items-center justify-center;
   }
 }
