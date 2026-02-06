@@ -52,5 +52,4 @@ function initNavbarActive() {
   });
 }
 
-// INIT
 loadAll();

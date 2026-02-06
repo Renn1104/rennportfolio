@@ -176,4 +176,11 @@
   #nextBtn:hover:not(:disabled) {
     transform: scale(1.08);
   }
+
+  .icon-btn {
+    @apply w-16 h-16 rounded-full bg-[#2c3e5d] flex items-center justify-center transition hover:scale-110;
+  }
+  .icon {
+    @apply w-8 h-8 fill-gray-200;
+  }
 }
