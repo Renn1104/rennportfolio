@@ -35,138 +35,141 @@
     </main>
     <footer id="footer"></footer>
 
-  <script src="./dist/assets/js/main.js"></script>
-<script src="./dist/assets/js/theme.js"></script>
-<script src="./dist/assets/js/projects.js"></script>
+    <script src="./dist/assets/js/main.js"></script>
+    <script src="./dist/assets/js/theme.js"></script>
+    <script src="./dist/assets/js/projects.js"></script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-<script>
-AOS.init({
-  duration: 900,
-  once: true,
-  easing: "ease-out-cubic",
-});
-</script>
-
-<!-- REVEAL OBSERVER -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+    <script>
+      AOS.init({
+        duration: 900,
+        once: true,
+        easing: "ease-out-cubic",
       });
-    },
-    { threshold: 0.15 }
-  );
+    </script>
 
-  reveals.forEach((el) => observer.observe(el));
-});
-</script>
+    <!-- REVEAL OBSERVER -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll(".reveal");
 
-<!-- SKILLS TOGGLE FIX -->
-<script>
-function initSkillToggle() {
-  const techGrid = document.getElementById("techGrid");
-  const toolsGrid = document.getElementById("toolsGrid");
-  const slider = document.getElementById("skillSlider");
-  const btnTech = document.getElementById("btnTech");
-  const btnTools = document.getElementById("btnTools");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
 
-  if (!techGrid || !toolsGrid || !slider || !btnTech || !btnTools) return false;
+        reveals.forEach((el) => observer.observe(el));
+      });
+    </script>
 
-  window.showTech = function () {
-    techGrid.classList.remove("hidden");
-    toolsGrid.classList.add("hidden");
-    slider.style.transform = "translateX(0%)";
+    <!-- SKILLS TOGGLE FIX -->
+    <script>
+      function initSkillToggle() {
+        const techGrid = document.getElementById("techGrid");
+        const toolsGrid = document.getElementById("toolsGrid");
+        const slider = document.getElementById("skillSlider");
+        const btnTech = document.getElementById("btnTech");
+        const btnTools = document.getElementById("btnTools");
 
-    btnTech.classList.remove("text-white");
-    btnTech.classList.add("text-black", "font-semibold");
+        if (!techGrid || !toolsGrid || !slider || !btnTech || !btnTools)
+          return false;
 
-    btnTools.classList.remove("text-black", "font-semibold");
-    btnTools.classList.add("text-white");
-  };
+        window.showTech = function () {
+          techGrid.classList.remove("hidden");
+          toolsGrid.classList.add("hidden");
+          slider.style.transform = "translateX(0%)";
 
-  window.showTools = function () {
-    techGrid.classList.add("hidden");
-    toolsGrid.classList.remove("hidden");
-    slider.style.transform = "translateX(100%)";
+          btnTech.classList.remove("text-white");
+          btnTech.classList.add("text-black", "font-semibold");
 
-    btnTools.classList.remove("text-white");
-    btnTools.classList.add("text-black", "font-semibold");
+          btnTools.classList.remove("text-black", "font-semibold");
+          btnTools.classList.add("text-white");
+        };
 
-    btnTech.classList.remove("text-black", "font-semibold");
-    btnTech.classList.add("text-white");
-  };
+        window.showTools = function () {
+          techGrid.classList.add("hidden");
+          toolsGrid.classList.remove("hidden");
+          slider.style.transform = "translateX(100%)";
 
-  return true;
-}
+          btnTools.classList.remove("text-white");
+          btnTools.classList.add("text-black", "font-semibold");
 
-/* Jalankan terus sampai section skills benar-benar sudah dimuat */
-document.addEventListener("DOMContentLoaded", () => {
-  const checkInterval = setInterval(() => {
-    const success = initSkillToggle();
-    if (success) clearInterval(checkInterval);
-  }, 200);
-});
-</script>
+          btnTech.classList.remove("text-black", "font-semibold");
+          btnTech.classList.add("text-white");
+        };
 
-<!-- PROJECT CAROUSEL -->
-<script>
-function initProjectCarousel() {
-  const carousel = document.getElementById("projectCarousel");
-  const backBtn = document.getElementById("backBtn");
-  const nextBtn = document.getElementById("nextBtn");
+        return true;
+      }
 
-  if (!carousel || !backBtn || !nextBtn) return false;
+      /* Jalankan terus sampai section skills benar-benar sudah dimuat */
+      document.addEventListener("DOMContentLoaded", () => {
+        const checkInterval = setInterval(() => {
+          const success = initSkillToggle();
+          if (success) clearInterval(checkInterval);
+        }, 200);
+      });
+    </script>
 
-  let index = 0;
-  const total = carousel.children.length;
+    <!-- PROJECT CAROUSEL -->
+    <script>
+      function initProjectCarousel() {
+        const carousel = document.getElementById("projectCarousel");
+        const backBtn = document.getElementById("backBtn");
+        const nextBtn = document.getElementById("nextBtn");
 
-  // Tambahkan smooth easing
-  carousel.style.transition = "transform 0.6s cubic-bezier(0.45, 0, 0.55, 1)";
+        if (!carousel || !backBtn || !nextBtn) return false;
 
-  function update() {
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+        let index = 0;
+        const total = carousel.children.length;
 
-    // efek disable tombol (optional)
-    backBtn.disabled = index === 0;
-    nextBtn.disabled = index === total - 1;
+        // Tambahkan smooth easing
+        carousel.style.transition =
+          "transform 0.6s cubic-bezier(0.45, 0, 0.55, 1)";
 
-    // ubah opacity saat disable
-    backBtn.style.opacity = backBtn.disabled ? "0.4" : "1";
-    nextBtn.style.opacity = nextBtn.disabled ? "0.4" : "1";
-  }
+        function update() {
+          carousel.style.transform = `translateX(-${index * 100}%)`;
 
-  nextBtn.onclick = () => {
-    if (index < total - 1) {
-      index++;
-      update();
-    }
-  };
+          // efek disable tombol (optional)
+          backBtn.disabled = index === 0;
+          nextBtn.disabled = index === total - 1;
 
-  backBtn.onclick = () => {
-    if (index > 0) {
-      index--;
-      update();
-    }
-  };
+          // ubah opacity saat disable
+          backBtn.style.opacity = backBtn.disabled ? "0.4" : "1";
+          nextBtn.style.opacity = nextBtn.disabled ? "0.4" : "1";
+        }
 
-  update();
-  return true;
-}
+        nextBtn.onclick = () => {
+          if (index < total - 1) {
+            index++;
+            update();
+          }
+        };
 
-/* Cek terus sampai section project sudah dimuat */
-document.addEventListener("DOMContentLoaded", () => {
-  const checkInterval = setInterval(() => {
-    const success = initProjectCarousel();
-    if (success) clearInterval(checkInterval);
-  }, 200);
-});
-</script>
+        backBtn.onclick = () => {
+          if (index > 0) {
+            index--;
+            update();
+          }
+        };
 
+        update();
+        return true;
+      }
+
+      /* Cek terus sampai section project sudah dimuat */
+      document.addEventListener("DOMContentLoaded", () => {
+        const checkInterval = setInterval(() => {
+          const success = initProjectCarousel();
+          if (success) clearInterval(checkInterval);
+        }, 200);
+      });
+    </script>
+  </body>
+</html>
