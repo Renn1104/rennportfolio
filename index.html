@@ -49,7 +49,6 @@
       });
     </script>
 
-    <!-- REVEAL OBSERVER -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const reveals = document.querySelectorAll(".reveal");
@@ -69,7 +68,6 @@
       });
     </script>
 
-    <!-- SKILLS TOGGLE FIX -->
     <script>
       function initSkillToggle() {
         const techGrid = document.getElementById("techGrid");
@@ -108,7 +106,6 @@
         return true;
       }
 
-      /* Jalankan terus sampai section skills benar-benar sudah dimuat */
       document.addEventListener("DOMContentLoaded", () => {
         const checkInterval = setInterval(() => {
           const success = initSkillToggle();
@@ -117,7 +114,6 @@
       });
     </script>
 
-    <!-- PROJECT CAROUSEL -->
     <script>
       function initProjectCarousel() {
         const carousel = document.getElementById("projectCarousel");
@@ -129,18 +125,15 @@
         let index = 0;
         const total = carousel.children.length;
 
-        // Tambahkan smooth easing
         carousel.style.transition =
           "transform 0.6s cubic-bezier(0.45, 0, 0.55, 1)";
 
         function update() {
           carousel.style.transform = `translateX(-${index * 100}%)`;
 
-          // efek disable tombol (optional)
           backBtn.disabled = index === 0;
           nextBtn.disabled = index === total - 1;
 
-          // ubah opacity saat disable
           backBtn.style.opacity = backBtn.disabled ? "0.4" : "1";
           nextBtn.style.opacity = nextBtn.disabled ? "0.4" : "1";
         }
@@ -163,7 +156,6 @@
         return true;
       }
 
-      /* Cek terus sampai section project sudah dimuat */
       document.addEventListener("DOMContentLoaded", () => {
         const checkInterval = setInterval(() => {
           const success = initProjectCarousel();
