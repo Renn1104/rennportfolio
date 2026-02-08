@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Renn Portfolio</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./dist/assets/images/Logo RENN.png"
+      sizes="64x64"
+    />
     <link rel="stylesheet" href="./dist/assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,20 +59,17 @@
       function initNavbarMenu() {
         const toggle = document.getElementById("menuToggle");
         const menu = document.getElementById("mobileMenu");
-        if (!toggle || !menu) return false; // kalau belum ada, tunggu dulu
+        if (!toggle || !menu) return false; 
 
         const links = menu.querySelectorAll("a");
 
-        // === TOGGLE MENU OPEN / CLOSE ===
         toggle.addEventListener("click", () => {
           toggle.classList.toggle("open");
 
           if (menu.classList.contains("hidden")) {
-            // OPEN
             menu.classList.remove("hidden");
             menu.classList.add("flex", "animate-fadeInDown");
           } else {
-            // CLOSE
             menu.classList.add("animate-fadeOutUp");
             setTimeout(() => {
               menu.classList.add("hidden");
@@ -80,7 +83,6 @@
           }
         });
 
-        // === CLOSE MENU AFTER CLICKING ANY LINK ===
         links.forEach((link) => {
           link.addEventListener("click", () => {
             menu.classList.add("animate-fadeOutUp");
@@ -104,10 +106,9 @@
           });
         });
 
-        return true; // sudah berhasil load
+        return true; 
       }
 
-      // Jalankan terus sampai navbar sudah dimuat
       document.addEventListener("DOMContentLoaded", () => {
         const navbarCheck = setInterval(() => {
           const success = initNavbarMenu();
