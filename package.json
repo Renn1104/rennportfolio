@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/assets/css/style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./dist/assets/css/style.css --minify"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/assets/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/assets/css/style.css --minify"
   },
-  "dependencies": {
-    "tailwindcss": "^4.1.18",
-    "@tailwindcss/cli": "^4.1.18"
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
   }
 }
