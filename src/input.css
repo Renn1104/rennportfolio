@@ -31,6 +31,20 @@
     width: 100%;
   }
 
+  @keyframes fadeOutUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  .animate-fadeOutUp {
+    animation: fadeOutUp 0.3s ease-in forwards;
+  }
+
   /* =====================================================
      EDUCATION CARD
   ====================================================== */
@@ -182,5 +196,15 @@
   }
   .icon {
     @apply w-8 h-8 fill-gray-200;
+  }
+
+  #typingText::after {
+    content: "|";
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
   }
 }
