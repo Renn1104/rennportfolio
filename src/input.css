@@ -157,86 +157,53 @@
     filter: drop-shadow(0 0 10px rgba(233, 244, 163, 0.7));
   }
 
-  /* =====================================================
-     PROJECT CARD
-  ====================================================== */
+  /* =========================
+   PROJECT STACK CARD
+========================= */
+
   .project-card {
-    @apply rounded-3xl
-           border border-white/20
-           bg-white/10
-           backdrop-blur
-           overflow-hidden
-           transition duration-300
-           hover:-translate-y-2
-           hover:shadow-[0_0_40px_rgba(233,244,163,0.35)];
+    @apply absolute w-[420px]
+         rounded-2xl
+         border border-white/20
+         bg-[#2c3f52]/95
+         backdrop-blur
+         shadow-xl
+         transition-all duration-500 ease-out
+         cursor-pointer;
   }
 
-  .badge {
+  .project-role {
     @apply inline-block
-           px-4 py-1
-           rounded-full
-           bg-[#E9F4A3]
-           text-black
-           text-sm
-           font-semibold;
-  }
-
-  .tag {
-    @apply px-3 py-1
-           rounded-full
-           bg-white/15
-           border border-white/20
-           text-sm
-           text-white;
+         bg-[#E9F4A3]
+         text-black
+         text-xs
+         font-semibold
+         px-3 py-1
+         rounded-full;
   }
 
   .project-btn {
     @apply w-full
-           mt-4
-           py-3
-           rounded-xl
-           bg-[#E9F4A3]
-           text-black
-           font-semibold
-           transition
-           hover:scale-105;
+         bg-[#E9F4A3]
+         text-black
+         font-semibold
+         py-3
+         rounded-xl
+         hover:scale-105
+         transition;
+  }
+
+  .tag {
+    @apply px-3 py-1 bg-white/20 rounded-full;
   }
 
   .nav-btn {
-    @apply px-8 py-3
-           rounded-xl
-           border border-[#E9F4A3]
-           text-[#E9F4A3]
-           transition
-           hover:bg-[#E9F4A3]
-           hover:text-black;
-  }
-
-  #backBtn:not(:disabled),
-  #nextBtn:not(:disabled) {
-    cursor: pointer;
-    transition: transform 0.25s ease;
-  }
-
-  #backBtn:hover:not(:disabled),
-  #nextBtn:hover:not(:disabled) {
-    transform: scale(1.08);
-  }
-
-  .icon-btn {
-    @apply w-16 h-16 rounded-full bg-[#2c3e5d] flex items-center justify-center transition hover:scale-110;
-  }
-  .icon {
-    @apply w-8 h-8 fill-gray-200;
-  }
-
-  #typingText::after {
-    content: "|";
-    animation: blink 1s infinite;
-  }
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+    @apply px-7 py-3
+         rounded-xl
+         bg-[#E9F4A3]
+         text-black
+         font-semibold
+         hover:scale-105
+         transition;
   }
 }
