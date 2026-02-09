@@ -11,12 +11,11 @@ async function loadHTML(selector, file) {
   }
 }
 
-// LOAD LAYOUT
 async function loadAll() {
   await loadHTML("#navbar", "./src/layouts/navbar.html");
   await loadHTML("#footer", "./src/layouts/footer.html");
 
-  // LOAD SECTIONS
+  
   await loadHTML("#hero", "./src/sections/hero.html");
   await loadHTML("#about", "./src/sections/about.html");
   await loadHTML("#education", "./src/sections/education.html");
